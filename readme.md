@@ -36,12 +36,6 @@
 This project uses the Pygithub library to call the GitHub API to retrieve the most starred public Python projects and store them in a database table. This table contains the repository ID, name, URL, created date, last push date, description, and number of stars. Using the data in the table, a web application is created that displays a list of the GitHub repositories and allows the user to click through pages to view details on each one. 
 ## Getting Started
 
-### Dependencies
-
-```
-pip install -r requirements.txt
-```
-
 ### Installing
 * Clone: 
 ```
@@ -54,6 +48,12 @@ git clone https://github.com/Nayuken/Github-Web-Directory-Python
 * 
   * In github_authentication.py provide your Github authentication token in the variable "token".
     * [Instructions on how to create an authentication token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+### Dependencies
+
+```
+pip install -r requirements.txt
+```
 
 ### Executing program
 
