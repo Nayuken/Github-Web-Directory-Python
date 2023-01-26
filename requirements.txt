@@ -1,0 +1,3 @@
+PyGithub==1.57
+Flask==2.2.2
+flask-sqlalchemy==2.5.1

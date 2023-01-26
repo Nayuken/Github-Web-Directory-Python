@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Github Web Directory: Python</title>
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <style>
+      h1 {text-align: center;}
+      footer {text-align: center;}
+      body {
+        font-family: Sans-Serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Github Web Directory: Python</h1>
+      <hr>
+      <div id="table"></div>
+    </div>
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script>
+
+      const mygrid = new gridjs.Grid({
+        columns: [
+          { id: 'repository_id', name: 'Repository ID' },
+          { id: 'name', name: 'Repository Name' },
+          { id: 'url', name: 'Repository url', sort: false },
+          { id: 'created_date', name: 'Date created' },
+          { id: 'last_push', name: 'Last push' },
+          { id: 'description', name: 'Description', sort: false },
+          { id: 'star_num', name: 'Number of stars.' },
+        ],
+        data: [
+          {% for repos in users %}
+            {
+              repository_id: {{ repos.repository_id }},
+              name: '{{ repos.name }}',
+              url: '{{ repos.url }}',
+              created_date: '{{ repos.created_date }}',
+              last_push: '{{ repos.last_push }}',
+              description: '{{ repos.description }}',
+              star_num: {{ repos.star_num }}
+            },
+          {% endfor %}
+        ],
+        search: {
+          selector: (cell, rowIndex, cellIndex) => [0, 1, 4].includes(cellIndex) ? cell : null,
+        },
+        sort: true,
+        pagination: true,
+      }).render(document.getElementById('table'));
+      mygrid.updateConfig({
+        data: [
+          {% for repos in users %}
+            {
+              repository_id: {{ repos.repository_id }},
+              name: '{{ repos.name }}',
+              url: '{{ repos.url }}',
+              created_date: '{{ repos.created_date }}',
+              last_push: '{{ repos.last_push }}',
+              description: '{{ repos.description }}',
+              star_num: {{ repos.star_num }}
+            },
+          {% endfor %}
+        ],
+      }).forceRender();
+    </script>
+  <footer>A fun project created by Nyenty Ayuk-Enow</footer>
+  </body>
+</html>
