@@ -43,8 +43,14 @@ pip install -r requirements.txt
 ```
 
 ### Installing
-* Clone:
+* Clone: 
+```
+git clone https://github.com/Nayuken/Github-Web-Directory-Python
+```
 * Download:
+```
+~Coming soon~
+```
 * 
   * In github_authentication.py provide your Github authentication token in the variable "token".
     * [Instructions on how to create an authentication token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
