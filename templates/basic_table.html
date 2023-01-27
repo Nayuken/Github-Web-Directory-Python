@@ -23,15 +23,15 @@
       const mygrid = new gridjs.Grid({
         columns: [
           { id: 'repository_id', name: 'Repository ID' },
-          { id: 'name', name: 'Repository Name' },
+          { id: 'name', name: 'Repository name' },
           { id: 'url', name: 'Repository url', sort: false },
           { id: 'created_date', name: 'Date created' },
           { id: 'last_push', name: 'Last push' },
           { id: 'description', name: 'Description', sort: false },
-          { id: 'star_num', name: 'Number of stars.' },
+          { id: 'star_num', name: 'Stars' },
         ],
         data: [
-          {% for Repos in users %}
+          {% for Repos in repo %}
             {
               repository_id: {{ Repos.repository_id }},
               name: '{{ Repos.name }}',
