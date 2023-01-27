@@ -9,7 +9,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-#create our a database model for our flask app to attach to
+
+# Creates our a database model for our flask app to attach to
 class Repos(db.Model):
     repository_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
@@ -19,14 +20,18 @@ class Repos(db.Model):
     description = db.Column(db.String(250))
     star_num = db.Column(db.Integer)
 
+
 # executes our API call
 with app.app_context():
     execute_db()
+
 
 @app.route('/')
 def index():
     db.create_all()
     repo = Repos.query.order_by(Repos.star_num).all()
     return render_template('basic_table.html', repo=repo)
+
+
 if __name__ == '__main__':
     app.run()
