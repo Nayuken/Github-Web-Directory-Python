@@ -31,15 +31,15 @@
           { id: 'star_num', name: 'Number of stars.' },
         ],
         data: [
-          {% for repos in users %}
+          {% for Repos in users %}
             {
-              repository_id: {{ repos.repository_id }},
-              name: '{{ repos.name }}',
-              url: '{{ repos.url }}',
-              created_date: '{{ repos.created_date }}',
-              last_push: '{{ repos.last_push }}',
-              description: '{{ repos.description }}',
-              star_num: {{ repos.star_num }}
+              repository_id: {{ Repos.repository_id }},
+              name: '{{ Repos.name }}',
+              url: '{{ Repos.url }}',
+              created_date: '{{ Repos.created_date }}',
+              last_push: '{{ Repos.last_push }}',
+              description: '{{ Repos.description }}',
+              star_num: {{ Repos.star_num }}
             },
           {% endfor %}
         ],
@@ -51,15 +51,15 @@
       }).render(document.getElementById('table'));
       mygrid.updateConfig({
         data: [
-          {% for repos in users %}
+          {% for Repos in repo %}
             {
-              repository_id: {{ repos.repository_id }},
-              name: '{{ repos.name }}',
-              url: '{{ repos.url }}',
-              created_date: '{{ repos.created_date }}',
-              last_push: '{{ repos.last_push }}',
-              description: '{{ repos.description }}',
-              star_num: {{ repos.star_num }}
+              repository_id: {{ Repos.repository_id }},
+              name: '{{ Repos.name }}',
+              url: '{{ Repos.url }}',
+              created_date: '{{ Repos.created_date }}',
+              last_push: '{{ Repos.last_push }}',
+              description: '{{ Repos.description }}',
+              star_num: {{ Repos.star_num }}
             },
           {% endfor %}
         ],

@@ -1,26 +1,6 @@
-"""
-part 1:
-1. Use the GitHub API to retrieve the most starred public Python projects.
-Store the list of repositories in a database table.
-
-2. The table must contain the
-repository ID, name, URL, created date, last push date, description, and
-number of stars.
-
-3. This process should be able to be run repeatedly and
-update the table each time.
-
-
-Useful links from the GitHub API documentation:
-https://developer.github.com/v3/
-https://developer.github.com/v3/search/
-Also:
-https://github.com/PyGithub/PyGithub
-"""
 from github import Github
 import sqlite3
 from github_authentication import Git_auth
-
 
 auth_key = Git_auth()
 con = sqlite3.connect('pythongit.db', check_same_thread=False)
@@ -34,7 +14,6 @@ cur.execute('''CREATE TABLE IF NOT EXISTS repos
 g = Github(auth_key.git_token())
 # Search using github API to find repositories with Python in them
 repositories = g.search_repositories(query='language:python')
-
 
 # Extract repository information and organize each piece to match a field in our sql table:
 def repo_scrape(repositories):

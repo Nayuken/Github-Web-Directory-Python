@@ -41,10 +41,7 @@ This project uses the Pygithub library to call the GitHub API to retrieve the mo
 ```
 git clone https://github.com/Nayuken/Github-Web-Directory-Python
 ```
-* Download:
-```
-~Coming soon~
-```
+
 * 
   * In github_authentication.py provide your Github authentication token in the variable "token".
     * [Instructions on how to create an authentication token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
@@ -59,7 +56,7 @@ pip install -r requirements.txt
 
 * How to run the program:
 ```
-flask --app GPRWD.py run
+flask --app GWDP.py run
 ```
 
 * How to run the program in debug mode:
