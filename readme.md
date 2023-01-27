@@ -61,7 +61,7 @@ flask --app GWDP.py run
 
 * How to run the program in debug mode:
 ```
-flask --app GPRWD.py --debug run
+flask --app GWDP.py --debug run
 ```
 ## Version History
 * 0.1
