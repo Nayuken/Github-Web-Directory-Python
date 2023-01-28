@@ -36,7 +36,7 @@ This project uses the PyGitHub library to call the GitHub API to retrieve the mo
 
 ## Requirements
 ```
-Python 3.7 =<
+Python >= 3.7
 pip
 ````
 
