@@ -22,24 +22,24 @@
 
       const mygrid = new gridjs.Grid({
         columns: [
-          { id: 'repository_id', name: 'Repository ID' },
-          { id: 'name', name: 'Repository name' },
-          { id: 'url', name: 'Repository url', sort: false },
-          { id: 'created_date', name: 'Date created' },
-          { id: 'last_push', name: 'Last push' },
-          { id: 'description', name: 'Description', sort: false },
-          { id: 'star_num', name: 'Stars' },
+          { id: 'repository_id', name: 'Repository ID', sort: false },
+          { id: 'name', name: 'Repository Name', sort: false ,width: '15%' },
+          { id: 'url', name: 'Repository url', sort: false, width: '15%' },
+          { id: 'created_date', name: 'Date created', sort: false },
+          { id: 'last_push', name: 'Last push', sort: false },
+          { id: 'description', name: 'Description', sort: false, width: '10%' },
+          { id: 'star_num', name: 'Stars', sort: true },
         ],
         data: [
-          {% for Repos in repo %}
+          {% for repo in Repos_list %}
             {
-              repository_id: {{ Repos.repository_id }},
-              name: '{{ Repos.name }}',
-              url: '{{ Repos.url }}',
-              created_date: '{{ Repos.created_date }}',
-              last_push: '{{ Repos.last_push }}',
-              description: '{{ Repos.description }}',
-              star_num: {{ Repos.star_num }}
+              repository_id: {{ repo.repository_id }},
+              name: '{{ repo.name }}',
+              url: '{{ repo.url }}',
+              created_date: '{{ repo.created_date }}',
+              last_push: '{{ repo.last_push }}',
+              description: '{{ repo.description }}',
+              star_num: {{ repo.star_num }}
             },
           {% endfor %}
         ],
@@ -49,21 +49,6 @@
         sort: true,
         pagination: true,
       }).render(document.getElementById('table'));
-      mygrid.updateConfig({
-        data: [
-          {% for Repos in repo %}
-            {
-              repository_id: {{ Repos.repository_id }},
-              name: '{{ Repos.name }}',
-              url: '{{ Repos.url }}',
-              created_date: '{{ Repos.created_date }}',
-              last_push: '{{ Repos.last_push }}',
-              description: '{{ Repos.description }}',
-              star_num: {{ Repos.star_num }}
-            },
-          {% endfor %}
-        ],
-      }).forceRender();
     </script>
   <footer>A fun project created by Nyenty Ayuk-Enow</footer>
   </body>
