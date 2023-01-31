@@ -59,4 +59,3 @@ def execute_db():
     cur.execute('''SELECT * FROM repos ORDER BY star_num DESC;''')
     # Commits changes to our database
     con.commit()
-execute_db()
